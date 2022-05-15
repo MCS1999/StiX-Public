@@ -13,7 +13,9 @@ local PrizePool = nil
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
         Wait(100)
-        StartCountDown()
+        if Settings.Lotto.Enabled then
+            StartCountDown()
+        end
     end
 end)
 
