@@ -20,8 +20,9 @@ Settings.Lotto = { -- Lottery Settings - this uses money from
 }
 
 Settings.Logs = {
-    ['taxes'] = 'https://discord.com/api/webhooks/974142286822772776/06YozR6Cvzl2HQcFNv9AqX5L_bIkoKJsUKqvZLvrBVcnAQyPN_T9tu6Ob5A5D4HHtn6Y',
-    ['lotto'] = 'https://discord.com/api/webhooks/975270011142807552/nWUGhwTz9wzZoNz3_MrYmQqAGBC8c8I_WIcYsrYfevryilhdnQtue1352dn5eQ3inNIK',
-    ['winners'] = 'https://discord.com/api/webhooks/975278036532486204/TUlkutQ3MkuKGsSBNJRBcHhrYUrjfqCSRvxszxWRse4BFJ6WP88Oyy8ZePXFLZuU6-GC',
-    ['timer'] = 'https://discord.com/api/webhooks/975278221522243654/263HrT-3r1_6mAsSUWJ9YehjRmztXHWvQrNbdS5ZtjawE5Ms3NlFEcq2EFIkJzHGOUL-',
+    ['taxes'] = '',
+    ['lotto'] = '',
+    ['winners'] = '',
+    ['timer'] = '',
+    ['CityName'] = 'enter_city_name Taxes'
 }

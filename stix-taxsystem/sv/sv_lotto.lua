@@ -72,7 +72,7 @@ ChooseWinner = function(prize)
             local WinnerName = Lucky.PlayerData.charinfo.firstname .. ' ' .. Lucky.PlayerData.charinfo.lastname
             local DiscordId = '<@' .. Lucky.PlayerData.discord:gsub("discord:", "") .. '>'
             Lucky.Functions.AddMoney('bank', prize)
-            TriggerEvent('stix:taxes:logs', 'winners', 'Lottory Removed $', 'green', '`Character :` **__'..WinnerName..'__** \n `Discord :` **'..DiscordId..'** \n `Jackpot :` ||$'..prize..'||', true)
+            TriggerEvent('stix:taxes:logs', 'winners', 'Lottory Winner', 'green', '`Character :` **__'..WinnerName..'__** \n `Discord :` **'..DiscordId..'** \n `Jackpot :` ||$'..prize..'||', true)
             TriggerClientEvent('QBCore:Notify', -1, WinnerName..' Has Won the Lottery!!!! ($'..prize..')', 'success', 3000)
         end
         return

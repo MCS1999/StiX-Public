@@ -36,7 +36,7 @@ RegisterNetEvent('stix:taxes:pay', function(source, cid)
     else
         taxPayer.Functions.RemoveMoney('bank', tax)
         TriggerEvent('stix:taxes:manageLotto', tax, 'add')
-        TriggerEvent('stix:taxes:logs', 'taxes', 'Trill City Taxes', 'black', '`Name :` **' .. taxPayer.PlayerData.charinfo.firstname .. ' ' .. taxPayer.PlayerData.charinfo.lastname .. '** \n `Taxes Paid :` **$' .. tax .. '** \n `Bracket :` **' .. targetBracket .. '** \n `Discord :`' .. DiscordId)
+        TriggerEvent('stix:taxes:logs', 'taxes', Settings.Logs.CityName, 'black', '`Name :` **' .. taxPayer.PlayerData.charinfo.firstname .. ' ' .. taxPayer.PlayerData.charinfo.lastname .. '** \n `Taxes Paid :` **$' .. tax .. '** \n `Bracket :` **' .. targetBracket .. '** \n `Discord :`' .. DiscordId)
         TriggerClientEvent('QBCore:Notify', taxPayer.PlayerData.source, 'You have paid - $' .. tax .. ' In Taxes. your tax bracket is - ' .. targetBracket, 'success', 7500)
         hasPaidTaxes[taxPayerId] = true
     end
