@@ -30,13 +30,20 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
 
 *There is not much to do in here its pretty drag and drop ~~almost~~*
 ```lua
-    TriggerEvent('stix:taxes:manageLotto', amount, action) -- Server Event
-
+    TriggerEvent('stix:taxes:manageLotto', amount, action) -- Server Trigger (Recommended)
+    TriggerServerEvent('stix:taxes:manageLotto', amount, action) -- Client Trigger
     -- Amount : the amount of money to add into the lotto. the taxes automatically get placed into the Lottery Pool. but if you want to integrate it with any other sources you may use the event to add or remove to it.
 
     -- Action : `add` - Adds to the current Lottery Pool. `remove` - Removes from the current Lottery Pool.
 ```
 
+```lua
+    TriggerEvent('stix:taxes:pay', source, cid) -- Server Trigger (Recommended)
+    TriggerServerEvent('stix:taxes:pay', source, cid) -- Client Trigger
+
+    -- Source : This is the players source id, this will be used to identify the players money,bank to determine taxes the logic is all handled automatically. all you need to do it place this where you want this to trigger (this has a automatic built in system to only charge 1x per restart of server.)
+
+    -- cid : this is the players citizenid. this is a failsafe and is required if source cannot be found then it will use the cid to search player this is again a failsafe to allow fool proofing of the script.
 
 # About Me
 
