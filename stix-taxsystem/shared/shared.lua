@@ -1,8 +1,17 @@
 Settings = {}
 
 Settings.Addons = { -- Addon Modules
-    ['Cars'] = false, -- WIP Vehicle Taxes
-    ['Property'] = false, -- WIP Property Taxes
+    ['Cars'] = {
+        ['Enabled'] = true,
+        ['Prices'] = {
+            ['Base'] = 250, -- Leave this, this will be the base price for cars not listed below.
+            
+            ---------------------------------------------------------------------------------------
+
+            ['oracle2'] = 1000, -- Model Name and how much the car cost into taxes.
+        }
+    }, -- WIP Vehicle Taxes
+    ['Property'] = true, -- WIP Property Taxes
     ['usingDiscord'] = false, -- If using the discord api attacthment from the ReadMe then enable else disable.
 }
 
