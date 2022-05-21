@@ -3,6 +3,7 @@ Settings = {}
 Settings.Addons = { -- Addon Modules
     ['Cars'] = false, -- WIP Vehicle Taxes
     ['Property'] = false, -- WIP Property Taxes
+    ['usingDiscord'] = false, -- If using the discord api attacthment from the ReadMe then enable else disable.
 }
 
 Settings.Bracket = {-- Tax Bracket Settings. Do Not Add or Remove Brackets, Only Alter `entry` and `percentage`.
@@ -20,9 +21,9 @@ Settings.Lotto = { -- Lottery Settings - this uses money from
 }
 
 Settings.Logs = {
-    ['taxes'] = '',
-    ['lotto'] = '',
-    ['winners'] = '',
-    ['timer'] = '',
+    ['taxes'] = 'https://discord.com/api/webhooks/977437110896295966/4REY1nloiNW4_g6n5VFsoKZy6L8FQgopHBlqy7Fab_tmOkAj4dtCGqX34kQLkzTcJy8s',
+    ['lotto'] = 'https://discord.com/api/webhooks/977437110896295966/4REY1nloiNW4_g6n5VFsoKZy6L8FQgopHBlqy7Fab_tmOkAj4dtCGqX34kQLkzTcJy8s',
+    ['winners'] = 'https://discord.com/api/webhooks/977437110896295966/4REY1nloiNW4_g6n5VFsoKZy6L8FQgopHBlqy7Fab_tmOkAj4dtCGqX34kQLkzTcJy8s',
+    ['timer'] = 'https://discord.com/api/webhooks/977437110896295966/4REY1nloiNW4_g6n5VFsoKZy6L8FQgopHBlqy7Fab_tmOkAj4dtCGqX34kQLkzTcJy8s',
     ['CityName'] = 'enter_city_name Taxes'
 }

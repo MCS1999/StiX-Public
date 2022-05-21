@@ -1,5 +1,6 @@
 Framework = exports['qb-core']:GetCoreObject()
 hasPaidTaxes = {}
+DiscordId = nil
 
 
 RegisterNetEvent('stix:taxes:pay', function(source, cid)
@@ -13,7 +14,11 @@ RegisterNetEvent('stix:taxes:pay', function(source, cid)
     local taxPayerId = taxPayer.PlayerData.citizenid
     local Bracket = Settings.Bracket
     local targetBracket = 'LowerClass'
-    local DiscordId = '<@' .. taxPayer.PlayerData.discord:gsub("discord:", "") .. '>'
+    if Settings.Addons.usingDiscord then
+        DiscordId = '<@' .. Lucky.PlayerData.discord:gsub("discord:", "") .. '>'
+    else
+        DiscordId = 'Disabled'
+    end
 
 
     -- Determine Bracket Placement.

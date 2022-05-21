@@ -10,6 +10,7 @@ local Years   = Months * 12
 
 local PrizePool = nil
 
+
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
         Wait(100)
@@ -70,7 +71,11 @@ ChooseWinner = function(prize)
 
         if Lucky then
             local WinnerName = Lucky.PlayerData.charinfo.firstname .. ' ' .. Lucky.PlayerData.charinfo.lastname
-            local DiscordId = '<@' .. Lucky.PlayerData.discord:gsub("discord:", "") .. '>'
+            if Settings.Addons.usingDiscord then
+                DiscordId = '<@' .. Lucky.PlayerData.discord:gsub("discord:", "") .. '>'
+            else
+                DiscordId = 'Disabled'
+            end
             Lucky.Functions.AddMoney('bank', prize)
             TriggerEvent('stix:taxes:logs', 'winners', 'Lottory Winner', 'green', '`Character :` **__'..WinnerName..'__** \n `Discord :` **'..DiscordId..'** \n `Jackpot :` ||$'..prize..'||', true)
             TriggerClientEvent('QBCore:Notify', -1, WinnerName..' Has Won the Lottery!!!! ($'..prize..')', 'success', 3000)
@@ -87,7 +92,7 @@ RegisterNetEvent('stix:taxes:manageLotto', function(amount, action)
 
     if not action then action = 'add' end -- default it to add
 
-    if not PrizePool then print('[Debug] - Error on ManageLotto') return end 
+    if not PrizePool then PrizePool = 0 print('[Debug] - We cannot find the prize pool. reverted to default.') return end 
 
     if action == 'add' then
         if (PrizePool + amount) > Settings.Lotto.LimitPrice then print('[Debug] This is not a error but the lotto price did not increase because we have exceeded the set limit of $'..Settings.Lotto.LimitPrice) return end
